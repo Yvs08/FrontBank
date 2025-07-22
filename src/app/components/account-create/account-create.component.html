@@ -1,0 +1,14 @@
+<div class="card">
+  <h2>Create Account</h2>
+  <div class="form-group">
+    <label for="initialBalance">Initial Balance</label>
+    <input id="initialBalance" type="number" [(ngModel)]="initialBalance" min="0" />
+    <button (click)="createAccount()">Create</button>
+  </div>
+  <div *ngIf="account" class="success">
+    <p>✅ Account created! <br>
+      <strong>ID:</strong> {{account?.id}}<br>
+      <strong>Balance:</strong> {{account?.balance | number:'1.2-2'}}
+    </p>
+  </div>
+</div>
